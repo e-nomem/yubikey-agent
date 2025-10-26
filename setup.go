@@ -155,8 +155,8 @@ func runSetup(yk *piv.YubiKey) {
 
 	pub, err := yk.GenerateKey(key, piv.SlotAuthentication, piv.Key{
 		Algorithm:   alg,
-		PINPolicy:   piv.PINPolicyOnce,
-		TouchPolicy: piv.TouchPolicyAlways,
+		PINPolicy:   piv.PINPolicyAlways,
+		TouchPolicy: piv.TouchPolicyNever,
 	})
 	if err != nil {
 		log.Fatalln("Failed to generate key:", err)
